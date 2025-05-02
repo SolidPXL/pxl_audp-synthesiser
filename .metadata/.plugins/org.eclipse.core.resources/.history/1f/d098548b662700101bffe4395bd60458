@@ -1,0 +1,22 @@
+#ifndef GENERATORS_H
+#define GENERATORS_H
+#include <stdint.h>
+
+extern uint32_t g_sample_index;
+extern int32_t g_sound_buffer[MAINBUFFER_SIZE];
+
+typedef struct {
+  float phase;        // [0,1) wrap-around
+  float phase_inc;    // = freq / sample_rate
+} OscState;
+
+
+//Generators
+struct sine_generator_config{
+	uint16_t pitch;
+};
+void sine_generator(void* config);
+
+
+
+#endif

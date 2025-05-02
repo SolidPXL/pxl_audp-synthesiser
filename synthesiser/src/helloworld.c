@@ -20,14 +20,51 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include "oscilators/generators.h"
+#include "globals.h"
+
+uint32_t g_sample_index = 0;
+int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
+
 
 
 int main()
 {
     init_platform();
+    print("Synthesiser\n\r");
 
-    print("Hello World\n\r");
-    print("Successfully ran Hello World application");
+    //Configure nodes, for each node create a generic_pipeline_node
+    struct sine_generator_config osc1_config = {
+    	.pitch = 0
+    };
+    struct generic_pipeline_node osc1_node = {
+    		.config = (void*)(&osc1_config),
+			.fnptr = sine_generator
+    };
+
+
+
+    //Synth pipeline
+    int pipeline_size = 1;
+    struct generic_pipeline_node pipeline[] = {  //Register the nodes here
+    		osc1_node
+    };
+
+    while(1){
+
+    	//Get input
+
+
+    	//Process pipeline
+    	for(int i=0;i<pipeline_size;i++){
+    		pipeline[i].fnptr(pipeline[i].config);
+    	}
+
+    	//Output result
+
+
+    }
     cleanup_platform();
     return 0;
+
 }

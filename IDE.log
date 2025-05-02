@@ -24,3 +24,46 @@ operable program or batch file.
 14:46:13 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
 14:55:01 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
 15:05:18 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+15:11:36 DEBUG : Logs will be stored at 'C:/vivado_audiosoc/eval-synthesiser/IDE.log'.
+15:11:37 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\vivado_audiosoc\eval-synthesiser\temp_xsdb_launch_script.tcl
+15:11:37 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+15:11:37 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+15:11:40 INFO  : XSCT server has started successfully.
+15:11:40 INFO  : plnx-install-location is set to ''
+15:11:40 INFO  : Successfully done setting XSCT server connection channel  
+15:11:40 INFO  : Successfully done setting workspace for the tool. 
+15:11:41 INFO  : Platform repository initialization has completed.
+15:11:52 INFO  : Registering command handlers for Vitis TCF services
+15:11:52 INFO  : Successfully done query RDI_DATADIR 
+15:13:16 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+15:16:07 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+15:17:07 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+15:17:55 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+16:48:16 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+16:58:42 DEBUG : Logs will be stored at 'C:/vivado_audiosoc/eval-synthesiser/IDE.log'.
+16:58:43 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\vivado_audiosoc\eval-synthesiser\temp_xsdb_launch_script.tcl
+16:58:43 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:58:43 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:58:43 ERROR : (XSDB Server)'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+16:58:46 INFO  : Platform repository initialization has completed.
+16:58:48 INFO  : XSCT server has started successfully.
+16:58:48 INFO  : plnx-install-location is set to ''
+16:58:48 INFO  : Successfully done setting XSCT server connection channel  
+16:58:48 INFO  : Successfully done setting workspace for the tool. 
+16:58:58 INFO  : Registering command handlers for Vitis TCF services
+16:59:03 INFO  : Successfully done query RDI_DATADIR 
+17:02:00 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+17:02:40 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...
+17:03:21 INFO  : Checking for BSP changes to sync application flags for project 'synthesiser'...

@@ -1,0 +1,7 @@
+#include "generators.h"
+
+
+void sine_generator(void* config){
+
+
+}

@@ -1,0 +1,11 @@
+#ifndef GENERATORS_H
+#define GENERATORS_H
+
+extern uint32_t g_sample_index;
+extern int32_t g_sound_buffer[MAINBUFFER_SIZE];
+
+void sine_generator(void* config);
+
+
+
+#endif
