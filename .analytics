@@ -1,0 +1,20 @@
+timestamp=[2025-05-02 14:43:24], mode=WORKBENCH_START, duration=0:00:14.180, duration_ms=14180, data={}
+timestamp=[2025-05-02 14:43:24], mode=WORKBENCH_UI_INIT, duration=0:00:00.012, duration_ms=12, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-05-02 14:43:26], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.085, duration_ms=85, data={}
+timestamp=[2025-05-02 14:45:10], mode=APP_CREATION, duration=0:00:33.229, duration_ms=33229, data={name=synthesiser, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=AudioProcessing2, application_type=application}
+timestamp=[2025-05-02 14:46:13], mode=PLATFORM_GENERATION, duration=0:00:25.447, duration_ms=25447, data={name=AudioProcessing2}
+timestamp=[2025-05-02 14:46:14], mode=BUILD, duration=0:00:01.476, duration_ms=1476, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 14:55:01], mode=BUILD, duration=0:00:00.492, duration_ms=492, data={name=synthesiser, configuration=Debug, clean_build=true}
+timestamp=[2025-05-02 14:55:28], mode=BUILD, duration=0:00:26.529, duration_ms=26529, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 15:05:18], mode=BUILD, duration=0:00:00.515, duration_ms=515, data={name=synthesiser, configuration=Debug, clean_build=true}
+timestamp=[2025-05-02 15:05:46], mode=BUILD, duration=0:00:26.936, duration_ms=26936, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 15:11:41], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.030, duration_ms=30, data={}
+timestamp=[2025-05-02 15:11:52], mode=WORKBENCH_START, duration=0:00:21.811, duration_ms=21811, data={}
+timestamp=[2025-05-02 15:11:52], mode=WORKBENCH_UI_INIT, duration=0:00:00.339, duration_ms=339, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=AudioProcessing2,RemoteSystemsTempFiles,synthesiser,synthesiser_system}
+timestamp=[2025-05-02 15:13:16], mode=BUILD, duration=0:00:00.643, duration_ms=643, data={name=synthesiser, configuration=Debug, clean_build=true}
+timestamp=[2025-05-02 15:13:33], mode=BUILD, duration=0:00:12.609, duration_ms=12609, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 15:16:07], mode=BUILD, duration=0:00:00.609, duration_ms=609, data={name=synthesiser, configuration=Debug, clean_build=true}
+timestamp=[2025-05-02 15:16:22], mode=BUILD, duration=0:00:13.993, duration_ms=13993, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 15:17:23], mode=BUILD, duration=0:00:15.439, duration_ms=15439, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-02 15:17:55], mode=BUILD, duration=0:00:00.550, duration_ms=550, data={name=synthesiser, configuration=Debug, clean_build=true}
+timestamp=[2025-05-02 15:18:56], mode=BUILD, duration=0:01:00.334, duration_ms=60334, data={name=synthesiser, configuration=Debug, clean_build=false}
