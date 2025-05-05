@@ -22,9 +22,11 @@
 #include "xil_printf.h"
 #include "oscilators/generators.h"
 #include "globals.h"
+#include "synth_lib.h"
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
+uint8_t g_keys_pressed[7]; //Allow a maximum of 7 notes to be played simultaneously
 
 
 
@@ -35,7 +37,8 @@ int main()
 
     //Configure nodes, for each node create a generic_pipeline_node
     struct sine_generator_config osc1_config = {
-    	.pitch = 0
+    	.freq = note_to_freq_lut(A4),
+		.amp = 100
     };
     struct generic_pipeline_node osc1_node = {
     		.config = (void*)(&osc1_config),

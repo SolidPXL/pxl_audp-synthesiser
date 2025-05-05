@@ -2688,3 +2688,324 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.xilinx.sdk.utils 0 0 2025-05-02 17:03:21.051
 !MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-0: Build Project
+!SESSION 2025-05-05 08:45:07.626 -----------------------------------------------
+eclipse.buildId=2023.2
+java.version=11.0.16.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2025-05-05 09:35:45.012
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:35:56.075
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:35:56.076
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:35:56.101
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-30
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.853
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.854
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.854
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.855
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-30
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.857
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, C:/Xilinx/Vitis/2024.1/data]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.857
+!MESSAGE XSCT Command: [setws C:/vivado_audiosoc/eval-synthesiser], Thread: Thread-30
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 09:36:01.874
+!MESSAGE XSCT command with result: [setws C:/vivado_audiosoc/eval-synthesiser], Result: [null, ]. Thread: Thread-30
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-05-05 10:31:23.838
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-05-05 10:31:23.840
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-05-05 10:31:23.841
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:37.534
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.885
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.895
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.916
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.918
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.925
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 10:53:40.928
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.935
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:53:40.938
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 10:53:56.480
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.161
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.167
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.168
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.172
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 10:55:28.179
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.181
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:55:28.184
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 10:55:43.477
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.963
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.968
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.969
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.980
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 10:56:41.981
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.985
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:56:41.989
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-27: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 10:56:57.879
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.289
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.298
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.299
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.304
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 10:57:30.306
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.309
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 10:57:30.313
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 10:57:46.289
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.900
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.905
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.906
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.911
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:00:12.912
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.919
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:12.938
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 11:00:28.843
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.111
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.117
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.117
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.122
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:00:54.123
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.134
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:00:54.137
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 11:01:09.460
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.601
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.606
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.607
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.612
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:01:23.619
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.621
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:01:23.624
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-26: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 11:01:39.046
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.299
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.305
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.306
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.321
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:03:56.322
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.324
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:03:56.327
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 11:04:12.374
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.891
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.896
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.897
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.902
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:04:29.903
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.909
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:04:29.912
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-20: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2025-05-05 11:04:45.359
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.794
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.807
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.809
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.813
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "9.1",
+}]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-05-05 11:05:11.814
+!MESSAGE Generating MD5 hash for file: C:\vivado_audiosoc\eval-synthesiser\AudioProcessing2\export\AudioProcessing2\sw\AudioProcessing2\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.816
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-05-05 11:05:11.819
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-16: Build Project

@@ -1,4 +1,4 @@
-17:03:21 **** Incremental Build of configuration Debug for project synthesiser ****
+11:05:12 **** Incremental Build of configuration Debug for project synthesiser ****
 make -j8 all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -11,19 +11,12 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_aud
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Include" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\PrivateInclude" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Source" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/oscilators/sine_generator.c: In function 'sine_generator':
-../src/oscilators/sine_generator.c:6:25: warning: unused variable 'phasebuffer' [-Wunused-variable]
-    6 |         static OscState phasebuffer = { 0.0f,0.0f};
-      |                         ^~~~~~~~~~~
-../src/oscilators/sine_generator.c:5:38: warning: unused variable 'parsed_config' [-Wunused-variable]
-    5 |         struct sine_generator_config parsed_config = *((struct sine_generator_config*)(config));
-      |                                      ^~~~~~~~~~~~~
-../src/oscilators/sine_generator.c: At top level:
-../src/oscilators/sine_generator.c:6:25: warning: 'phasebuffer' defined but not used [-Wunused-variable]
-    6 |         static OscState phasebuffer = { 0.0f,0.0f};
-      |                         ^~~~~~~~~~~
+../src/oscilators/sine_generator.c:9:51: warning: division by zero [-Wdiv-by-zero]
+    9 |         phasebuffer.phase_inc = parsed_config.freq/SAMPLE_RATE_HZ;
+      |                                                   ^
 'Finished building: ../src/oscilators/sine_generator.c'
-'Finished building: ../src/helloworld.c'
 ' '
+'Finished building: ../src/helloworld.c'
 ' '
 'Building target: synthesiser.elf'
 'Invoking: ARM v7 gcc linker'
@@ -32,9 +25,9 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_aud
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size synthesiser.elf  |tee "synthesiser.elf.size"
    text	   data	    bss	    dec	    hex	filename
-1549788	   1152	  30784	1581724	 18229c	synthesiser.elf
+1551116	   1152	  23616	1575884	 180bcc	synthesiser.elf
 'Finished building: synthesiser.elf.size'
 ' '
 
-17:03:33 Build Finished (took 12s.141ms)
+11:05:29 Build Finished (took 16s.619ms)
 
