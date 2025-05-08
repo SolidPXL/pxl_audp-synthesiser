@@ -1,23 +1,14 @@
 Nothing to build in platform 'AudioProcessing2'
 
-11:05:12 **** Incremental Build of configuration Debug for project synthesiser ****
+10:43:48 **** Incremental Build of configuration Debug for project synthesiser ****
 make -j8 all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory main-build
-'Building file: ../src/oscilators/sine_generator.c'
-'Invoking: ARM v7 gcc compiler'
 'Building file: ../src/helloworld.c'
-arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Include" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\PrivateInclude" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Source" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/oscilators/sine_generator.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/oscilators/sine_generator.d" -MT"src/oscilators/sine_generator.o" -o "src/oscilators/sine_generator.o" "../src/oscilators/sine_generator.c"
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Include" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\PrivateInclude" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Source" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/oscilators/sine_generator.c: In function 'sine_generator':
-../src/oscilators/sine_generator.c:9:51: warning: division by zero [-Wdiv-by-zero]
-    9 |         phasebuffer.phase_inc = parsed_config.freq/SAMPLE_RATE_HZ;
-      |                                                   ^
-'Finished building: ../src/oscilators/sine_generator.c'
-' '
 'Finished building: ../src/helloworld.c'
 ' '
 'Building target: synthesiser.elf'
@@ -27,6 +18,6 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_aud
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size synthesiser.elf  |tee "synthesiser.elf.size"
    text	   data	    bss	    dec	    hex	filename
-1551116	   1152	  23616	1575884	 180bcc	synthesiser.elf
+1562113	   1168	  23696	1586977	 183721	synthesiser.elf
 'Finished building: synthesiser.elf.size'
 ' '

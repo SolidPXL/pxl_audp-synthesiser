@@ -38,3 +38,13 @@ timestamp=[2025-05-05 11:01:39], mode=BUILD, duration=0:00:14.777, duration_ms=1
 timestamp=[2025-05-05 11:04:12], mode=BUILD, duration=0:00:15.411, duration_ms=15411, data={name=synthesiser, configuration=Debug, clean_build=false}
 timestamp=[2025-05-05 11:04:45], mode=BUILD, duration=0:00:14.792, duration_ms=14792, data={name=synthesiser, configuration=Debug, clean_build=false}
 timestamp=[2025-05-05 11:05:29], mode=BUILD, duration=0:00:16.777, duration_ms=16777, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-08 09:52:25], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.124, duration_ms=124, data={}
+timestamp=[2025-05-08 09:53:43], mode=WORKBENCH_START, duration=0:01:31.517, duration_ms=91517, data={}
+timestamp=[2025-05-08 09:53:44], mode=WORKBENCH_UI_INIT, duration=0:00:00.360, duration_ms=360, data={editors_count=8, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=AudioProcessing2,RemoteSystemsTempFiles,synthesiser,synthesiser_system}
+timestamp=[2025-05-08 10:14:52], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.111, duration_ms=111, data={}
+timestamp=[2025-05-08 10:14:52], mode=WORKBENCH_START, duration=0:00:10.488, duration_ms=10488, data={}
+timestamp=[2025-05-08 10:14:53], mode=WORKBENCH_UI_INIT, duration=0:00:00.169, duration_ms=169, data={editors_count=6, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=AudioProcessing2,RemoteSystemsTempFiles,synthesiser,synthesiser_system}
+timestamp=[2025-05-08 10:23:55], mode=BUILD, duration=0:00:14.534, duration_ms=14534, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-08 10:35:20], mode=BUILD, duration=0:00:11.833, duration_ms=11833, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-08 10:39:26], mode=BUILD, duration=0:00:11.842, duration_ms=11842, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-08 10:44:00], mode=BUILD, duration=0:00:11.831, duration_ms=11831, data={name=synthesiser, configuration=Debug, clean_build=false}

@@ -23,22 +23,30 @@
 #include "oscilators/generators.h"
 #include "globals.h"
 #include "synth_lib.h"
+#include "audio.h"
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
 uint8_t g_keys_pressed[7]; //Allow a maximum of 7 notes to be played simultaneously
 
+int32_t convert(uint32_t val) {
+    return (int32_t)(val ^ 0x80000000); // flips the MSB
+}
 
 
 int main()
 {
     init_platform();
     print("Synthesiser\n\r");
+    xil_printf("MAINBUFFER_SIZE: %d\n",MAINBUFFER_SIZE);
+    xil_printf("BUFFER_TIME_MS: %d\n",BUFFER_TIME_MS);
+    xil_printf("SAMPLE_INTERVAL_US: %d\n",SAMPLE_INTERVAL_US);
+    xil_printf("SAMPLE_RATE_HZ: %d\n",SAMPLE_RATE_HZ);
 
     //Configure nodes, for each node create a generic_pipeline_node
     struct sine_generator_config osc1_config = {
     	.freq = note_to_freq_lut(A4),
-		.amp = 100
+		.amp = 1147483647
     };
     struct generic_pipeline_node osc1_node = {
     		.config = (void*)(&osc1_config),
@@ -64,6 +72,11 @@ int main()
     	}
 
     	//Output result
+    	for(int i=0;i<MAINBUFFER_SIZE;i++){
+    		int32_t output = convert(g_sound_buffer[i]);
+    		Xil_Out32(I2S_DATA_TX_L_REG, output);
+    		Xil_Out32(I2S_DATA_TX_R_REG, output);
+    	}
 
 
     }

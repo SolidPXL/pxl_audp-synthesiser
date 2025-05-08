@@ -8,6 +8,7 @@ void sine_generator(void* config){
 	//Set the right increment
 	phasebuffer.phase_inc = parsed_config.freq/SAMPLE_RATE_HZ;
 
+
 	for (int i = 0; i < MAINBUFFER_SIZE; i++) {
 	  g_sound_buffer[i] = sinf(2*M_PI * phasebuffer.phase) * parsed_config.amp;
 	  phasebuffer.phase += phasebuffer.phase_inc;
