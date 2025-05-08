@@ -1,6 +1,6 @@
 Nothing to build in platform 'AudioProcessing2'
 
-10:43:48 **** Incremental Build of configuration Debug for project synthesiser ****
+12:05:24 **** Incremental Build of configuration Debug for project synthesiser ****
 make -j8 all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -18,6 +18,6 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_aud
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size synthesiser.elf  |tee "synthesiser.elf.size"
    text	   data	    bss	    dec	    hex	filename
-1562113	   1168	  23696	1586977	 183721	synthesiser.elf
+1562241	   1168	  23696	1587105	 1837a1	synthesiser.elf
 'Finished building: synthesiser.elf.size'
 ' '

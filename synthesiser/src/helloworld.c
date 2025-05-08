@@ -24,6 +24,7 @@
 #include "globals.h"
 #include "synth_lib.h"
 #include "audio.h"
+#include "sleep.h"
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
@@ -37,6 +38,18 @@ int32_t convert(uint32_t val) {
 int main()
 {
     init_platform();
+	//Configure the IIC data structure
+	IicConfig(XPAR_XIICPS_0_DEVICE_ID);
+
+	//Configure the Audio Codec's PLL
+	AudioPllConfig();
+
+	//Configure the Line in and Line out ports.
+	//Call LineInLineOutConfig() for a configuration that
+	//enables the HP jack too.
+	AudioConfigureJacks();
+	LineinLineoutConfig();
+
     print("Synthesiser\n\r");
     xil_printf("MAINBUFFER_SIZE: %d\n",MAINBUFFER_SIZE);
     xil_printf("BUFFER_TIME_MS: %d\n",BUFFER_TIME_MS);
@@ -45,8 +58,8 @@ int main()
 
     //Configure nodes, for each node create a generic_pipeline_node
     struct sine_generator_config osc1_config = {
-    	.freq = note_to_freq_lut(A4),
-		.amp = 1147483647
+    	.freq = note_to_freq_lut(A2),
+		.amp = 5000000
     };
     struct generic_pipeline_node osc1_node = {
     		.config = (void*)(&osc1_config),
@@ -76,7 +89,11 @@ int main()
     		int32_t output = convert(g_sound_buffer[i]);
     		Xil_Out32(I2S_DATA_TX_L_REG, output);
     		Xil_Out32(I2S_DATA_TX_R_REG, output);
+    		usleep_A9(SAMPLE_INTERVAL_US);
     	}
+
+//    	uint32_t data = Xil_In32(I2S_DATA_RX_L_REG);
+//    	xil_printf("%d\n",data);
 
 
     }
