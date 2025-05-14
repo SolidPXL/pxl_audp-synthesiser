@@ -1,0 +1,18 @@
+#ifndef DISTORTION_H
+#define DISTORTION_H
+
+#include "../globals.h"
+#include <stdint.h>
+#include <arm_math.h>
+
+// Config voor distortion: versterking en clipping-drempel
+typedef struct {
+    float32_t gain;       // versterking vóór clipping
+    float32_t threshold;  // clipping-niveau (bv. 0.2 .. 1.0)
+} DistortionConfig;
+
+// Functie-signatuur: door de pipeline aangeroepen
+void distortion(void* config);
+
+
+#endif // DISTORTION_H

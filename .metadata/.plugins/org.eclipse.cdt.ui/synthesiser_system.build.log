@@ -1,0 +1,16 @@
+21:31:43 **** Build of configuration Debug for project synthesiser_system ****
+make -j12 all 
+Generating bif file for the system project
+generate_system_bif.bat 53936 C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/AudioProcessing2/export/AudioProcessing2/AudioProcessing2.xpfm standalone_ps7_cortexa9_0 C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser_system/Debug/system.bif
+'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+sdcard_gen --xpfm C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/AudioProcessing2/export/AudioProcessing2/AudioProcessing2.xpfm --sys_config AudioProcessing2 --bif C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser_system/Debug/system.bif --bitstream C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser/_ide/bitstream/AudioProcessing2.bit --elf C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser/Debug/synthesiser.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser/_ide/bitstream/AudioProcessing2.bit
+Running C:/Xilinx/Vitis/2024.1/bin/bootgen  -image C:/DevWorks/Synthseiser_git/pxl_audp-synthesiser/synthesiser_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+21:31:55 Build Finished (took 12s.298ms)
+

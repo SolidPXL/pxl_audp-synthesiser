@@ -1,0 +1,19 @@
+#include "effects.h"
+
+void distortion (void* config) {
+	DistortionConfig *c = (DistortionConfig*)config;
+	    for (int i = 0; i < MAINBUFFER_SIZE; i++) {
+
+	        float32_t in = (float32_t)g_sound_buffer[i] / (float32_t)INT32_MAX;
+
+	        in = in * c->gain;
+
+	        if (in > c->threshold)      in = c->threshold;
+	        else if (in < -c->threshold) in = -c->threshold;
+
+	        g_sound_buffer[i] = (int32_t)(in * (float32_t)INT32_MAX);
+	    }
+
+
+
+}

@@ -1,0 +1,8 @@
+#include "distortion.h"
+
+void distortion (void* config) {
+struct distortion_config parsed_config = *((struct distortion_config*)(config));
+
+
+
+}

@@ -1,0 +1,17 @@
+#ifndef DISTORTION_H
+#define DISTORTION_H
+
+#include "../globals.h"
+#include <stdint.h>
+#include <arm_math.h>
+
+extern uint32_t g_sample_index;
+extern int32_t g_sound_buffer[MAINBUFFER_SIZE];
+
+struct distortion_config {
+	float gain;
+};
+
+void distortion(void* config);
+
+#endif // DISTORTION_H

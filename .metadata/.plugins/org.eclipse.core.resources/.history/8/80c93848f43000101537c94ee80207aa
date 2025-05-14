@@ -1,0 +1,26 @@
+#ifndef SOUND_EFFECTS_H
+#define SOUND_EFFECTS_H
+
+#include "../globals.h"
+#include <stdint.h>
+#include <arm_math.h>
+
+typedef struct {
+    float32_t gain;
+    float32_t threshold;
+} DistortionConfig;
+void distortion(void *config);
+
+typedef struct {
+    uint32_t delay_samples;
+    float32_t feedback;
+} DelayConfig;
+void delay_effect(void *config);
+
+typedef struct {
+    float32_t alpha;
+    float32_t prev;
+} LowpassConfig;
+void lowpass(void *config);
+
+#endif // SOUND_EFFECTS_H
