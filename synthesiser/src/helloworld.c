@@ -59,22 +59,70 @@ int main()
     //Configure nodes, for each node create a generic_pipeline_node
     struct sine_generator_config osc1_config = {
     	.freq = note_to_freq_lut(A2),
-		.amp = 5000000
+		.amp = 5000000,
+		.phasebuffer = {
+				.phase = 0,
+				.phase_inc = 0
+		}
     };
     struct generic_pipeline_node osc1_node = {
     		.config = (void*)(&osc1_config),
 			.fnptr = sine_generator
     };
 
+    struct saw_generator_config osc2_config = {
+		.freq = note_to_freq_lut(A2),
+		.amp = 5000000,
+		.phasebuffer = {
+				.phase = 0,
+				.phase_inc = 0
+		}
+	};
+	struct generic_pipeline_node osc2_node = {
+			.config = (void*)(&osc2_config),
+			.fnptr = saw_generator
+	};
+
+
+	struct square_generator_config osc3_config = {
+		.freq = note_to_freq_lut(A2),
+		.amp = 5000000,
+		.phasebuffer = {
+				.phase = 0,
+				.phase_inc = 0
+		}
+	};
+	struct generic_pipeline_node osc3_node = {
+			.config = (void*)(&osc3_config),
+			.fnptr = square_generator
+	};
+
+
+	struct triangle_generator_config osc4_config = {
+		.freq = note_to_freq_lut(A2),
+		.amp = 5000000,
+		.phasebuffer = {
+				.phase = 0,
+				.phase_inc = 0
+		}
+	};
+	struct generic_pipeline_node osc4_node = {
+			.config = (void*)(&osc4_config),
+			.fnptr = triangle_generator
+	};
 
 
     //Synth pipeline
     int pipeline_size = 1;
     struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc1_node
+    		osc4_node
     };
 
     while(1){
+    	//zero buffer
+    	for(int i=0;i<MAINBUFFER_SIZE;i++){
+    		g_sound_buffer[i] = 0;
+		}
 
     	//Get input
 

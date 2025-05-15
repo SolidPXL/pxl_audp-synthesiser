@@ -1,13 +1,13 @@
-12:05:24 **** Incremental Build of configuration Debug for project synthesiser ****
+12:25:38 **** Incremental Build of configuration Debug for project synthesiser ****
 make -j8 all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory main-build
-'Building file: ../src/helloworld.c'
+'Building file: ../src/oscilators/generator_functions.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Include" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\PrivateInclude" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Source" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-'Finished building: ../src/helloworld.c'
+arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_audiosoc/eval-synthesiser/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Include" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\PrivateInclude" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\Source" -I"C:\vivado_audiosoc\eval-synthesiser\synthesiser\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/oscilators/generator_functions.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/oscilators/generator_functions.d" -MT"src/oscilators/generator_functions.o" -o "src/oscilators/generator_functions.o" "../src/oscilators/generator_functions.c"
+'Finished building: ../src/oscilators/generator_functions.c'
 ' '
 'Building target: synthesiser.elf'
 'Invoking: ARM v7 gcc linker'
@@ -16,9 +16,9 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/vivado_aud
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size synthesiser.elf  |tee "synthesiser.elf.size"
    text	   data	    bss	    dec	    hex	filename
-1562241	   1168	  23696	1587105	 1837a1	synthesiser.elf
+1563905	   1168	  23680	1588753	 183e11	synthesiser.elf
 'Finished building: synthesiser.elf.size'
 ' '
 
-12:05:36 Build Finished (took 11s.897ms)
+12:25:50 Build Finished (took 12s.7ms)
 

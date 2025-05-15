@@ -1,0 +1,47 @@
+#ifndef GENERATORS_H
+#define GENERATORS_H
+#include "../globals.h"
+#include <stdint.h>
+#include <arm_math.h>
+
+extern uint32_t g_sample_index;
+extern int32_t g_sound_buffer[MAINBUFFER_SIZE];
+
+typedef struct {
+  float phase;        // [0,1) wrap-around
+  float phase_inc;    // = freq / sample_rate
+} OscState;
+
+
+//Generators
+struct sine_generator_config{
+	float freq;
+	uint32_t amp;
+};
+void sine_generator(void* config);
+
+struct saw_generator_config{
+	float freq;
+	uint32_t amp;
+};
+void saw_generator(void* config);
+
+struct square_generator_config{
+	float freq;
+	uint32_t amp;
+};
+void square_generator(void* config);
+
+struct supersaw_generator_config{
+	float freq;
+	uint32_t amp;
+};
+void supersaw_generator(void* config);
+
+//functions
+int32_t square_func(float freq,float phase, float amp);
+int32_t saw_func(float freq,float phase, float amp);
+
+
+
+#endif

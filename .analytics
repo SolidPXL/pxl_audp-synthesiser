@@ -67,3 +67,20 @@ timestamp=[2025-05-08 11:59:38], mode=BUILD, duration=0:00:12.101, duration_ms=1
 timestamp=[2025-05-08 12:00:59], mode=BUILD, duration=0:00:12.051, duration_ms=12051, data={name=synthesiser, configuration=Debug, clean_build=false}
 timestamp=[2025-05-08 12:03:27], mode=BUILD, duration=0:00:12.118, duration_ms=12118, data={name=synthesiser, configuration=Debug, clean_build=false}
 timestamp=[2025-05-08 12:05:36], mode=BUILD, duration=0:00:12.051, duration_ms=12051, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 09:46:25], mode=WORKBENCH_START, duration=0:00:14.262, duration_ms=14262, data={}
+timestamp=[2025-05-15 09:46:25], mode=WORKBENCH_UI_INIT, duration=0:00:00.235, duration_ms=235, data={editors_count=7, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=AudioProcessing2,RemoteSystemsTempFiles,synthesiser,synthesiser_system}
+timestamp=[2025-05-15 09:46:26], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.120, duration_ms=120, data={}
+timestamp=[2025-05-15 11:04:16], mode=BUILD, duration=0:00:11.971, duration_ms=11971, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:05:26], mode=BUILD, duration=0:00:11.317, duration_ms=11317, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:09:00], mode=BUILD, duration=0:00:14.827, duration_ms=14827, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:11:01], mode=BUILD, duration=0:00:11.899, duration_ms=11899, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:11:59], mode=BUILD, duration=0:00:10.748, duration_ms=10748, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:12:29], mode=BUILD, duration=0:00:12.457, duration_ms=12457, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:16:28], mode=BUILD, duration=0:00:12.420, duration_ms=12420, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:23:38], mode=BUILD, duration=0:00:12.504, duration_ms=12504, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:31:36], mode=BUILD, duration=0:00:12.421, duration_ms=12421, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:38:10], mode=BUILD, duration=0:00:12.438, duration_ms=12438, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:38:46], mode=BUILD, duration=0:00:12.281, duration_ms=12281, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 11:44:26], mode=BUILD, duration=0:00:12.597, duration_ms=12597, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 12:22:45], mode=BUILD, duration=0:00:25.671, duration_ms=25671, data={name=synthesiser, configuration=Debug, clean_build=false}
+timestamp=[2025-05-15 12:25:50], mode=BUILD, duration=0:00:12.158, duration_ms=12158, data={name=synthesiser, configuration=Debug, clean_build=false}

@@ -1,0 +1,11 @@
+#include <generators.h>
+
+
+
+void square_func(float freq,float phase, float amp){
+
+}
+
+void saw_func(float freq,float phase, float amp){
+
+}

@@ -1,0 +1,8 @@
+#include "generators.h"
+#define CFG ((struct sine_generator_config*)config)
+
+void saw_generator(void* config){
+
+
+}
+

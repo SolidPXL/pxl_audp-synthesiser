@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;synthesiser/src/oscilators/squaregenerator.c&apos; to &apos;square_generator.c&apos;" description="Rename resource &apos;squaregenerator.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/oscilators/squaregenerator.c" name="square_generator.c" stamp="1747296182849" updateReferences="true"/>
+</session>
