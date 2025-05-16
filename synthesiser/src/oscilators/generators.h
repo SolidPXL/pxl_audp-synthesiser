@@ -7,10 +7,12 @@
 extern uint32_t g_sample_index;
 extern int32_t g_sound_buffer[MAINBUFFER_SIZE];
 
-typedef struct {
+struct Osc_State{
   float phase;        // [0,1) wrap-around
   float phase_inc;    // = freq / sample_rate
-} OscState;
+};
+typedef struct Osc_State OscState;
+
 
 
 //Generators
@@ -44,9 +46,10 @@ void triangle_generator(void* config);
 
 struct supersaw_generator_config{
 	float freq;
-	uint32_t amp;
-	OscState phasebuffer;
+	float amp;
+	OscState* phasebuffers;
 	uint8_t voices;
+	float voice_width;
 };
 void supersaw_generator(void* config);
 

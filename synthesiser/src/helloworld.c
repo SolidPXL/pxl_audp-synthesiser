@@ -25,6 +25,7 @@
 #include "synth_lib.h"
 #include "audio.h"
 #include "sleep.h"
+#include <stdlib.h>
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
@@ -99,7 +100,7 @@ int main()
 
 
 	struct triangle_generator_config osc4_config = {
-		.freq = note_to_freq_lut(A2),
+		.freq = note_to_freq_lut(A4),
 		.amp = 5000000,
 		.phasebuffer = {
 				.phase = 0,
@@ -111,11 +112,29 @@ int main()
 			.fnptr = triangle_generator
 	};
 
+	struct supersaw_generator_config osc5_config = {
+		.freq = note_to_freq_lut(A3),
+		.amp = 5000000,
+		.phasebuffers = NULL,
+		.voices = 5,
+		.voice_width = 2.0f
+	};
+	osc5_config.phasebuffers = (OscState*)malloc(osc5_config.voices*sizeof(OscState));
+	for(int i=0;i<osc5_config.voices;i++){
+		osc5_config.phasebuffers[i].phase = 0;
+		osc5_config.phasebuffers[i].phase_inc = 0;
+	}
+
+	struct generic_pipeline_node osc5_node = {
+			.config = (void*)(&osc5_config),
+			.fnptr = supersaw_generator
+	};
+
 
     //Synth pipeline
     int pipeline_size = 1;
     struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc4_node
+    		osc5_node
     };
 
     while(1){
