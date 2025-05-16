@@ -1,8 +1,0 @@
-#include "generators.h"
-
-
-void saw_generator(void* config){
-
-
-}
-
