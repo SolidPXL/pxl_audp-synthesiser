@@ -24,6 +24,7 @@
 #include "globals.h"
 #include "synth_lib.h"
 #include "audio.h"
+#include "effects/sound_effects.h"
 #include "sleep.h"
 
 uint32_t g_sample_index = 0;
@@ -66,21 +67,74 @@ int main()
 			.fnptr = sine_generator
     };
 
+    // Distortion effect node
+    struct distortion_config dist_config = {
+            .gain      = 5.0f,
+            .threshold = 0.3f
+    };
+    struct generic_pipeline_node distortion_node = {
+            .config = (void*)&dist_config,
+            .fnptr  = distortion
+    };
+
+    // 3) Delay effect node
+    struct delay_config delay_config = {
+        .delay_samples = SAMPLE_RATE_HZ / 4,  // 250 ms delay
+        .feedback      = 0.5f
+    };
+    struct generic_pipeline_node delay_node = {
+        .config = (void*)&delay_config,
+        .fnptr  = delay_effect
+    };
+
+    // 4) Low-pass filter node
+        struct lowpass_config lp_config = {
+            .alpha = 0.1f,
+            .prev  = 0.0f
+        };
+        struct generic_pipeline_node lowpass_node = {
+            .config = (void*)&lp_config,
+            .fnptr  = lowpass
+        };
 
 
     //Synth pipeline
-    int pipeline_size = 1;
+    int pipeline_size = 4;
     struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc1_node
+    		osc1_node,
+			distortion_node,
+			delay_node,
+			lowpass_node
     };
+    const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
+
+
+
+    int buffers_per_effect = 5000 / BUFFER_TIME_MS;
+    int current = 0;
 
     while(1){
+    	xil_printf("Applying %s...\r\n", pipeline_names[current]);
+    	for(int i =0 ; i< buffers_per_effect; i++ ) {
+    		pipeline[current].fnptr(pipeline[current].config);
+
+
+    		for(int i=0;i<MAINBUFFER_SIZE;i++){
+    		    		int32_t output = convert(g_sound_buffer[i]);
+    		    		Xil_Out32(I2S_DATA_TX_L_REG, output);
+    		    		Xil_Out32(I2S_DATA_TX_R_REG, output);
+    		    		usleep_A9(SAMPLE_INTERVAL_US);
+    		    	}
+
+    	}
+    	 current = (current +1) %pipeline_size;
 
     	//Get input
 
-
+/*
     	//Process pipeline
     	for(int i=0;i<pipeline_size;i++){
+    		xil_printf("Applying %s...\r\n", pipeline_names[i]);
     		pipeline[i].fnptr(pipeline[i].config);
     	}
 
@@ -91,7 +145,7 @@ int main()
     		Xil_Out32(I2S_DATA_TX_R_REG, output);
     		usleep_A9(SAMPLE_INTERVAL_US);
     	}
-
+*/
 //    	uint32_t data = Xil_In32(I2S_DATA_RX_L_REG);
 //    	xil_printf("%d\n",data);
 
