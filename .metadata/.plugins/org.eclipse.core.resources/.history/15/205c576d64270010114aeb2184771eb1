@@ -1,7 +1,0 @@
-#include "generators.h"
-
-
-void sine_generator(void* config){
-	static OscState phasebuffer = { 0.0f,0.0f};
-
-}
