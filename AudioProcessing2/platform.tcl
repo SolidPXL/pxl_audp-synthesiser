@@ -22,3 +22,23 @@ platform generate -quick
 platform generate
 platform generate -domains standalone_ps7_cortexa9_0,zynq_fsbl 
 platform generate
+platform generate -domains standalone_ps7_cortexa9_0,zynq_fsbl 
+platform active {AudioProcessing2}
+platform config -updatehw {C:/Users/axelc/Downloads/audio_interrupt_user_btn.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform config -updatehw {C:/Users/axelc/Downloads/audioprocessing2.xsa}
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform generate
+platform config -updatehw {C:/Users/axelc/Downloads/AudioProcessing2.xsa}
+platform clean
+platform clean
+platform clean
+platform generate

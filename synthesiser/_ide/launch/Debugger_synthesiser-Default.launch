@@ -43,7 +43,7 @@
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.ingore.peer.conflict" value="false"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.launch.work.dir" value=""/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis" value="false"/>
-    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis.linux.hw.target" value=""/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis.linux.hw.target" value="Local"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.sdsoc.project" value="synthesiser"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.secure.debug" value="false"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.secure.debug.image" value=""/>

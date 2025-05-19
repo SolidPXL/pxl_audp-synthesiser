@@ -28,6 +28,25 @@
 #include "sleep.h"
 #include <stdlib.h>
 #include <xtime_l.h>
+#include "xgpio.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+#define GPIO_DEVICE_ID			XPAR_AXI_GPIO_1_DEVICE_ID
+#define INTR_ID					XPAR_FABRIC_AXI_GPIO_1_IP2INTC_IRPT_INTR
+#define BTN_CHANNEL				1
+
+#define GPIO_LEDS_DEVICE_ID     XPAR_AXI_GPIO_2_DEVICE_ID
+#define LED_MASK                0x01
+#define LED_CHANNEL				1
+
+static XGpio    Gpio;   // GPIO driver instance
+static XGpio 	Leds;	// LED driver instance
+static XScuGic  Intc;   // Interrupt controller instance
+
+
+volatile uint32_t active_fx = 0;
+
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
@@ -37,6 +56,64 @@ int32_t convert(uint32_t val) {
     return (int32_t)(val ^ 0x80000000); // flips the MSB
 }
 
+
+void ButtonISR(void *InstancePtr)
+{
+    XGpio_InterruptClear(&Gpio, 1);
+    uint32_t btns = XGpio_DiscreteRead(&Gpio, BTN_CHANNEL) & 0xF;
+    // For each button pressed, toggle the corresponding effect bit
+    for (int i = 0; i < 4; i++) {
+        uint32_t mask = (1u << i);
+        if (btns & mask) {
+            active_fx ^= mask;
+        }
+    }
+}
+
+int SetupInterruptSystem(XScuGic *IntcInstancePtr, XGpio *GpioInstancePtr)
+{
+    int status;
+    XScuGic_Config *gic_cfg;
+
+    // Look up the GIC configuration
+    gic_cfg = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
+    if (!gic_cfg) return XST_FAILURE;
+
+    // Initialize the GIC driver
+    status = XScuGic_CfgInitialize(IntcInstancePtr, gic_cfg, gic_cfg->CpuBaseAddress);
+    if (status != XST_SUCCESS) return status;
+
+    // Connect our ButtonISR to the GPIO interrupt ID
+    status = XScuGic_Connect(IntcInstancePtr,
+                             INTR_ID,
+                             (Xil_ExceptionHandler)ButtonISR,
+                             (void *)GpioInstancePtr);
+    if (status != XST_SUCCESS) return status;
+
+    // Enable the interrupt at the GIC
+    XScuGic_Enable(IntcInstancePtr, INTR_ID);
+
+    // Initialize the exception table and register the GIC handler
+    Xil_ExceptionInit();
+    Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+                                 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+                                 IntcInstancePtr);
+    Xil_ExceptionEnable();
+
+    // Initialize the GPIO driver
+    status = XGpio_Initialize(GpioInstancePtr, GPIO_DEVICE_ID);
+    if (status != XST_SUCCESS) return status;
+
+    // Set channel directions: channel 1 = inputs, channel 2 = outputs
+    XGpio_SetDataDirection(GpioInstancePtr, BTN_CHANNEL, 0xF);   // 4-bit input
+    XGpio_SetDataDirection(GpioInstancePtr, LED_CHANNEL, 0x0);   // 4-bit output
+
+    // Enable GPIO interrupts on channel 1 (buttons)
+    XGpio_InterruptEnable(GpioInstancePtr, 1);
+    XGpio_InterruptGlobalEnable(GpioInstancePtr);
+
+    return XST_SUCCESS;
+}
 
 int main()
 {
@@ -52,6 +129,20 @@ int main()
 	//enables the HP jack too.
 	AudioConfigureJacks();
 	LineinLineoutConfig();
+
+	int status;
+	    status = XGpio_Initialize(&Leds, GPIO_LEDS_DEVICE_ID);
+	    if (status != XST_SUCCESS)  return XST_FAILURE;
+	    XGpio_SetDataDirection(&Leds,
+	                           LED_CHANNEL,
+	                           ~LED_MASK);
+
+		 // Hook up interrupts and GPIO
+		status = SetupInterruptSystem(&Intc, &Gpio);
+			if (status != XST_SUCCESS) {
+				xil_printf("Interrupt setup failed %d\r\n", status);
+		        return XST_FAILURE;
+		    }
 
     print("Synthesiser\n\r");
     xil_printf("MAINBUFFER_SIZE: %d\n",MAINBUFFER_SIZE);
@@ -139,23 +230,43 @@ int main()
 			.fnptr = supersine_generator
 	};
 
+    // Distortion effect node
+    struct distortion_config dist_config = {
+            .gain      = 5.0f,
+            .threshold = 0.3f
+    };
+    struct generic_pipeline_node distortion_node = {
+            .config = (void*)&dist_config,
+            .fnptr  = distortion
+    };
+
+    struct delay_config delay_config = {
+        .delay_samples = SAMPLE_RATE_HZ / 4,  // 250 ms delay
+        .feedback      = 0.5f
+    };
+    struct generic_pipeline_node delay_node = {
+        .config = (void*)&delay_config,
+        .fnptr  = delay_effect
+    };
+
 
     //Synth pipeline
-    int pipeline_size = 1;
-    struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc5_node
-    };
-    const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
+    struct generic_pipeline_node pipeline[5] ;  //Register the nodes here
+    pipeline[0]	=	osc5_node;
+
+    //const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
 
 
 
-    int buffers_per_effect = 5000 / BUFFER_TIME_MS;
-    int current = 0;
+
 
     uint32_t k=0;
 
     while(1){
-    	if(k>= 0xFFFFFFFF){
+    	//  mirror buttons to LEDs
+    	XGpio_DiscreteWrite(&Leds, LED_CHANNEL, active_fx);
+
+     	if(k>= 0xFFFFFFFF){
     		k=0;
     	}
     	int note = k/500;
@@ -166,12 +277,16 @@ int main()
     		g_sound_buffer[i] = 0;
 		}
 		
-    	//Get input
+    	//Build pipeline for this buffer: oscillator + any active effects
+        int idx = 1;
+        if (active_fx & 0x1) pipeline[idx++] = distortion_node;
+        if (active_fx & 0x2) pipeline[idx++] = delay_node;
+      //  if (active_fx & 0x4) pipeline[idx++] = lpf_node;
+      //  if (active_fx & 0x8) pipeline[idx++] = bitcrush_node;
+        int pipeline_size = idx;
 
-
-    	//Process pipeline
+     	//Process pipeline
     	for(int i=0;i<pipeline_size;i++){
-    		xil_printf("Applying %s...\r\n", pipeline_names[i]);
     		pipeline[i].fnptr(pipeline[i].config);
     	}
 
