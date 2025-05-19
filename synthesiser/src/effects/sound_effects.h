@@ -26,4 +26,8 @@ struct lowpass_config{
 } ;
 void lowpass(void *config);
 
+
+//Filters
+void filterlp(void *config);
+
 #endif // SOUND_EFFECTS_H

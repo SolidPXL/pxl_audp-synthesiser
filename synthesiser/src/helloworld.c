@@ -139,18 +139,21 @@ int main()
 			.fnptr = supersine_generator
 	};
 
+	//Filters
+
+	struct generic_pipeline_node fx_lp = {
+		.config = NULL,
+		.fnptr = filterlp
+	};
+
 
     //Synth pipeline
-    int pipeline_size = 1;
+    int pipeline_size = 2;
     struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc5_node
+    		osc5_node,
+			fx_lp
     };
-    const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
 
-
-
-    int buffers_per_effect = 5000 / BUFFER_TIME_MS;
-    int current = 0;
 
     uint32_t k=0;
 
@@ -171,7 +174,6 @@ int main()
 
     	//Process pipeline
     	for(int i=0;i<pipeline_size;i++){
-    		xil_printf("Applying %s...\r\n", pipeline_names[i]);
     		pipeline[i].fnptr(pipeline[i].config);
     	}
 
