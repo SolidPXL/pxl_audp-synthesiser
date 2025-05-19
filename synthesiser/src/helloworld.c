@@ -26,6 +26,8 @@
 #include "audio.h"
 #include "effects/sound_effects.h"
 #include "sleep.h"
+#include <stdlib.h>
+#include <xtime_l.h>
 
 uint32_t g_sample_index = 0;
 int32_t g_sound_buffer[MAINBUFFER_SIZE] = {0};
@@ -57,54 +59,91 @@ int main()
     xil_printf("SAMPLE_INTERVAL_US: %d\n",SAMPLE_INTERVAL_US);
     xil_printf("SAMPLE_RATE_HZ: %d\n",SAMPLE_RATE_HZ);
 
+    XTime time;
+    XTime_GetTime(&time);
+    srand(time);
+
     //Configure nodes, for each node create a generic_pipeline_node
-    struct sine_generator_config osc1_config = {
-    	.freq = note_to_freq_lut(A2),
-		.amp = 5000000
-    };
-    struct generic_pipeline_node osc1_node = {
-    		.config = (void*)(&osc1_config),
-			.fnptr = sine_generator
-    };
+//    struct sine_generator_config osc1_config = {
+//    	.freq = note_to_freq_lut(A2),
+//		.amp = 5000000,
+//		.phasebuffer = {
+//				.phase = 0,
+//				.phase_inc = 0
+//		}
+//    };
+//    struct generic_pipeline_node osc1_node = {
+//    		.config = (void*)(&osc1_config),
+//			.fnptr = sine_generator
+//    };
+//
+//    struct saw_generator_config osc2_config = {
+//		.freq = note_to_freq_lut(A2),
+//		.amp = 5000000,
+//		.phasebuffer = {
+//				.phase = 0,
+//				.phase_inc = 0
+//		}
+//	};
+//	struct generic_pipeline_node osc2_node = {
+//			.config = (void*)(&osc2_config),
+//			.fnptr = saw_generator
+//	};
+//
+//
+//	struct square_generator_config osc3_config = {
+//		.freq = note_to_freq_lut(A2),
+//		.amp = 5000000,
+//		.phasebuffer = {
+//				.phase = 0,
+//				.phase_inc = 0
+//		}
+//	};
+//	struct generic_pipeline_node osc3_node = {
+//			.config = (void*)(&osc3_config),
+//			.fnptr = square_generator
+//	};
+//
+//
+//	struct triangle_generator_config osc4_config = {
+//		.freq = note_to_freq_lut(A4),
+//		.amp = 5000000,
+//		.phasebuffer = {
+//				.phase = 0,
+//				.phase_inc = 0
+//		}
+//	};
+//	struct generic_pipeline_node osc4_node = {
+//			.config = (void*)(&osc4_config),
+//			.fnptr = triangle_generator
+//	};
 
-    // Distortion effect node
-    struct distortion_config dist_config = {
-            .gain      = 5.0f,
-            .threshold = 0.3f
-    };
-    struct generic_pipeline_node distortion_node = {
-            .config = (void*)&dist_config,
-            .fnptr  = distortion
-    };
+	struct supersine_generator_config osc5_config = {
+		.freq = note_to_freq_lut(A3),
+		.amp = 7000000,
+		.phasebuffers = NULL,
+		.voices = 5,
+		.voice_width = 8.0f
+	};
+	osc5_config.phasebuffers = (OscState*)malloc(osc5_config.voices*sizeof(OscState));
+	for(int i=0;i<osc5_config.voices;i++){
+		//read random noise
+		uint32_t audin = Xil_In32(I2S_DATA_RX_L_REG);
+		uint32_t random = rand();
+		osc5_config.phasebuffers[i].phase = ((float)audin+random)/0xFFFFFFFF;
+		osc5_config.phasebuffers[i].phase_inc = 0;
+	}
 
-    // 3) Delay effect node
-    struct delay_config delay_config = {
-        .delay_samples = SAMPLE_RATE_HZ / 4,  // 250 ms delay
-        .feedback      = 0.5f
-    };
-    struct generic_pipeline_node delay_node = {
-        .config = (void*)&delay_config,
-        .fnptr  = delay_effect
-    };
-
-    // 4) Low-pass filter node
-        struct lowpass_config lp_config = {
-            .alpha = 0.1f,
-            .prev  = 0.0f
-        };
-        struct generic_pipeline_node lowpass_node = {
-            .config = (void*)&lp_config,
-            .fnptr  = lowpass
-        };
+	struct generic_pipeline_node osc5_node = {
+			.config = (void*)(&osc5_config),
+			.fnptr = supersine_generator
+	};
 
 
     //Synth pipeline
-    int pipeline_size = 4;
+    int pipeline_size = 1;
     struct generic_pipeline_node pipeline[] = {  //Register the nodes here
-    		osc1_node,
-			distortion_node,
-			delay_node,
-			lowpass_node
+    		osc5_node
     };
     const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
 
@@ -113,25 +152,23 @@ int main()
     int buffers_per_effect = 5000 / BUFFER_TIME_MS;
     int current = 0;
 
+    uint32_t k=0;
+
     while(1){
-    	xil_printf("Applying %s...\r\n", pipeline_names[current]);
-    	for(int i =0 ; i< buffers_per_effect; i++ ) {
-    		pipeline[current].fnptr(pipeline[current].config);
-
-
-    		for(int i=0;i<MAINBUFFER_SIZE;i++){
-    		    		int32_t output = convert(g_sound_buffer[i]);
-    		    		Xil_Out32(I2S_DATA_TX_L_REG, output);
-    		    		Xil_Out32(I2S_DATA_TX_R_REG, output);
-    		    		usleep_A9(SAMPLE_INTERVAL_US);
-    		    	}
-
+    	if(k>= 0xFFFFFFFF){
+    		k=0;
     	}
-    	 current = (current +1) %pipeline_size;
+    	int note = k/500;
+    	osc5_config.freq = note_to_freq_lut(note);
 
+    	//zero buffer
+    	for(int i=0;i<MAINBUFFER_SIZE;i++){
+    		g_sound_buffer[i] = 0;
+		}
+		
     	//Get input
 
-/*
+
     	//Process pipeline
     	for(int i=0;i<pipeline_size;i++){
     		xil_printf("Applying %s...\r\n", pipeline_names[i]);
@@ -145,10 +182,8 @@ int main()
     		Xil_Out32(I2S_DATA_TX_R_REG, output);
     		usleep_A9(SAMPLE_INTERVAL_US);
     	}
-*/
-//    	uint32_t data = Xil_In32(I2S_DATA_RX_L_REG);
-//    	xil_printf("%d\n",data);
 
+    	k++;
 
     }
     cleanup_platform();
