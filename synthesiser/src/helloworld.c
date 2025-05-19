@@ -230,7 +230,10 @@ int main()
 			.fnptr = supersine_generator
 	};
 
-    // Distortion effect node
+	//===========================
+    //			EFFECTS
+	//===========================
+
     struct distortion_config dist_config = {
             .gain      = 5.0f,
             .threshold = 0.3f
@@ -248,6 +251,20 @@ int main()
         .config = (void*)&delay_config,
         .fnptr  = delay_effect
     };
+
+    struct generic_pipeline_node fx_lp_node = {
+		.config = NULL,
+		.fnptr  = filterlp
+	};
+
+    struct gating_fx_config gate_config = {
+		.delay_ms = 400
+	};
+	struct generic_pipeline_node gating_node = {
+		.config = (void*)&gate_config,
+		.fnptr  = fx_gate
+	};
+
 
 
     //Synth pipeline
@@ -281,8 +298,8 @@ int main()
         int idx = 1;
         if (active_fx & 0x1) pipeline[idx++] = distortion_node;
         if (active_fx & 0x2) pipeline[idx++] = delay_node;
-      //  if (active_fx & 0x4) pipeline[idx++] = lpf_node;
-      //  if (active_fx & 0x8) pipeline[idx++] = bitcrush_node;
+        if (active_fx & 0x4) pipeline[idx++] = gating_node;
+        if (active_fx & 0x8) pipeline[idx++] = fx_lp_node;
         int pipeline_size = idx;
 
      	//Process pipeline
