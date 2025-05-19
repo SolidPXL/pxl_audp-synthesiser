@@ -53,6 +53,24 @@ struct supersaw_generator_config{
 };
 void supersaw_generator(void* config);
 
+struct supertriangle_generator_config{
+	float freq;
+	float amp;
+	OscState* phasebuffers;
+	uint8_t voices;
+	float voice_width;
+};
+void supertriangle_generator(void* config);
+
+struct supersine_generator_config{
+	float freq;
+	float amp;
+	OscState* phasebuffers;
+	uint8_t voices;
+	float voice_width;
+};
+void supersine_generator(void* config);
+
 //functions
 int32_t isquare_func(float phase, float amp);
 float fsquare_func(float phase);

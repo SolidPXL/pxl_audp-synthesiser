@@ -1,9 +1,9 @@
 #include "generators.h"
-#define CFG ((struct supersaw_generator_config*)config)
+#define CFG ((struct supersine_generator_config*)config)
 
-void supersaw_generator(void* config){
+void supersine_generator(void* config){
 
-	struct supersaw_generator_config parsed_config = *((struct supersaw_generator_config*)(config));
+	struct supersine_generator_config parsed_config = *((struct supersine_generator_config*)(config));
 
 	//Set the right increment
 
@@ -19,8 +19,8 @@ void supersaw_generator(void* config){
 		for(int j=0;j<CFG->voices;j++){
 //			int middif = abs(j- (CFG->voices/2))+1;
 //			uint32_t amp = ((parsed_config.amp)/(CFG->voices*middif))*((CFG->voices+1)/2);
-//			g_sound_buffer[i] += (int32_t)(fsawa_func(CFG->phasebuffers[j].phase) * amp);
-			g_sound_buffer[i] += (int32_t)(fsawa_func(CFG->phasebuffers[j].phase) * (CFG->amp/CFG->voices));
+//			g_sound_buffer[i] += (int32_t)(sinf(2*M_PI * CFG->phasebuffers[j].phase) * amp);
+			g_sound_buffer[i] += (int32_t)(sinf(2*M_PI * CFG->phasebuffers[j].phase) * (CFG->amp/CFG->voices));
 			CFG->phasebuffers[j].phase += CFG->phasebuffers[j].phase_inc;
 			if (CFG->phasebuffers[j].phase >= 1.0f) CFG->phasebuffers[j].phase -= 1.0f;
 		}
