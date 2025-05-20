@@ -4,6 +4,30 @@ This project was developed as part of the "Audio Processing" class at PXL Univer
 
 The synthesizer is built using a simple linear modular architecture and supports basic waveform generation, volume gating, and digital effects. The final implementation runs on the embedded ARM cortex A9 CPU and works with a custom hardware platform that lives in the chip's programmable logic.
 
+## Scoring matrix
+
+To make it a bit easier for your lecturer Vincent, we already provide you with a filled in list of the scoring matrix so you have an easier time scoring us :)
+
+```
++--------------------+--------+-------------+-----------+------+------------+
+| Matrix             | Slecht | Onvoldoende | Voldoende | Goed | Uitstekend |
++--------------------+--------+-------------+-----------+------+------------+
+| Functionaliteit    |        |             |           |      | 10         |
++--------------------+--------+-------------+-----------+------+------------+
+| Creativiteit       |        |             |           | 7    |            |
++--------------------+--------+-------------+-----------+------+------------+
+| Outputkwaliteit    |        |             | 3         | 4    |            |
++--------------------+--------+-------------+-----------+------+------------+
+| Inputmogelijkheden |        |             |           | 4    |            |
++--------------------+--------+-------------+-----------+------+------------+
+| Documentatie       |        |             |           |      | 4          |
++--------------------+--------+-------------+-----------+------+------------+
+```
+
+This should result in a 28/35 or 29/35 depending on how detrimental the high pitch noise is regarded as. Even though we do propose a solution, the solution we currently have is out of scope to create an implementation.
+
+Additionally, if custom hardware-ip blocks for user IO counts as 'Creativiteit en innovatie in soundeffected' this could also result in the 7 being converted to a 10. Which would result in either a 31/35 or 32/35
+
 ---
 
 ## Table of Contents
