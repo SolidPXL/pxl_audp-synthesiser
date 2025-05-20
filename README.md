@@ -26,7 +26,7 @@ To make it a bit easier for your lecturer Vincent, we already provide you with a
 
 This should result in a 28/35 or 29/35 depending on how detrimental the high pitch noise is regarded as. Even though we do propose a solution, the solution we currently have is out of scope to create an implementation.
 
-Additionally, if custom hardware-ip blocks for user IO counts as 'Creativiteit en innovatie in soundeffected' this could also result in the 7 being converted to a 10. Which would result in either a 31/35 or 32/35
+Additionally, if custom hardware-ip blocks for user IO counts as 'Creativiteit en innovatie in soundeffecten' this could also result in the 7 being converted to a 10. Which would result in either a 31/35 or 32/35
 
 ---
 
