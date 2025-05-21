@@ -235,8 +235,8 @@ int main()
 	//===========================
 
     struct distortion_config dist_config = {
-            .gain      = 5.0f,
-            .threshold = 0.3f
+            .gain      = 2.0f,
+            .threshold = 0.5f
     };
     struct generic_pipeline_node distortion_node = {
             .config = (void*)&dist_config,
@@ -258,7 +258,7 @@ int main()
 	};
 
     struct gating_fx_config gate_config = {
-		.delay_ms = 400
+		.delay_ms = 40
 	};
 	struct generic_pipeline_node gating_node = {
 		.config = (void*)&gate_config,
@@ -270,12 +270,6 @@ int main()
     //Synth pipeline
     struct generic_pipeline_node pipeline[5] ;  //Register the nodes here
     pipeline[0]	=	osc5_node;
-
-    //const char *pipeline_names[] = { "Oscillator", "Distortion", "Delay", "Lowpass" };
-
-
-
-
 
     uint32_t k=0;
 
