@@ -247,7 +247,7 @@ int pipeline_size = idx;
 
 In the current pipeline configuration there is a high pitches noise that is happening roughly every 1.8ms with a buffer output time of 2ms. This is likely because during this time the pipeline is executing and the program has to halt until new data is available. In audio this causes a notable disturbance. 
 
-*TODO: ADD IMAGE OF THE PHENOMENON*
+![](img/Capture.PNG)
 
 In the current setup this will have to be solved using parallelism. Using both cores available to split the generation and the output mechanisms to eliminate this high pitch noise. Sadly this issue was not able to be fixed due to the high complexity involved with dual-core systems and our limited knowledge about the topic. In case it does get integrated a approach like follows can be used.
 
