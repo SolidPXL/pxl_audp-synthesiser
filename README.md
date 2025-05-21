@@ -36,7 +36,6 @@ Additionally, if custom hardware-ip blocks for user IO counts as 'Creativiteit e
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
 - [Changing the pipeline](#changing-the-pipeline)
-- [Build Instructions](#build-instructions)
 - [Run Instructions](#run-instructions)
 - [Known Issues](#known-issues)
 
@@ -208,13 +207,39 @@ if (active_fx & 0x8) pipeline[idx++] = fx_lp_node;
 int pipeline_size = idx;
 ```
 
-## Build Instructions
-
-*TODO: Step-by-step guide to build the synthesizer, including toolchain setup.*
-
 ## Run Instructions
 
-*TODO: How to load the project, configure it, and run the synthesizer.*
+1. Download the repo and find the .zip file in the root of the directory
+
+2. Open vitis
+
+3. Go to file->import
+
+4. Select Vitis projected exported zip file
+
+5. Select the zip file you just downloaded
+
+6. Press import
+
+7. Right click on the green project and press clean
+
+8. Right click on the green project and press build
+
+9. Right click on the outer blue project and press clean
+
+10. Right click on the outer blue project and press build
+
+11. Right click on the inner blue project and press clean
+
+12. Right click on the innter blue project and press build
+
+13. Connect your Pynq Board
+
+14. Right click on synthesier -> debug as -> launch hardware
+
+15. Press play in the top toolbar
+
+16. Use user input to control the synthesiser
 
 ## Known Issues
 
