@@ -6,7 +6,7 @@ The synthesizer is built using a simple linear modular architecture and supports
 
 ## Scoring matrix
 
-To make it a bit easier for your lecturer Vincent, we already provide you with a filled in list of the scoring matrix so you have an easier time scoring us :)
+To make it a bit easier for our lecturer, we already provide you with a filled in list of the scoring matrix so you have an easier time scoring us :)
 
 ```
 +--------------------+--------+-------------+-----------+------+------------+
@@ -98,10 +98,9 @@ This buffer is a global variable and together with some other important global d
 Another key concept is the node based approach. In order to dynamically take away and add new effects to the chain the function has to be padded around a standard wrapper. This wrapper contains the configuration for the node and a pointer to the function. The function itself it responsible for correctly interpreting the config pointer it gets and the developer is responsible for actually providing a pointer to both the function and the configuration. Using these nodes the effect pipeline sequentially goes through each node and calls their function with the corresponding config
 
 ```c
-
 struct generic_pipeline_node{
-	void* config;
-	void (*fnptr)(void*);
+    void* config;
+    void (*fnptr)(void*);
 };
 ```
 
@@ -109,13 +108,11 @@ The config can be any made struct, an example could be, the pointer to this stru
 
 ```c
 struct sine_generator_config{
-	float freq;
-	uint32_t amp;
-	OscState phasebuffer;
+    float freq;
+    uint32_t amp;
+    OscState phasebuffer;
 };
 ```
-
-
 
 ```mermaid
 graph TD
@@ -193,8 +190,8 @@ If you want to add multiple generators increase the pipeline size and add it rig
 ```c
  //Synth pipeline
  struct generic_pipeline_node pipeline[5] ;  //Register the nodes here
- pipeline[0]	=	osc1_node;
- pipeline[1]	=	osc2_node;
+ pipeline[0]    =    osc1_node;
+ pipeline[1]    =    osc2_node;
 ```
 
 If you want static effects what aren't controlled by the buttons you can also add effects in the same way.
@@ -210,9 +207,6 @@ if (active_fx & 0x4) pipeline[idx++] = gating_node;
 if (active_fx & 0x8) pipeline[idx++] = fx_lp_node;
 int pipeline_size = idx;
 ```
-
-
-
 
 ## Build Instructions
 
@@ -259,5 +253,3 @@ flowchart TD
     GCheck:::altBufferStyle
     OCheck:::altBufferStyle
 ```
-
-
